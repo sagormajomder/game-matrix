@@ -1,5 +1,6 @@
 import { Outlet } from "react-router";
 
+import Container from "../components/Container";
 import Footer from "./../components/Footer";
 import Header from "./../components/Header";
 
@@ -16,5 +17,9 @@ export default function RootLayout() {
 }
 
 function Main({ children }) {
-  return <main>{children}</main>;
+  return (
+    <main>
+      <Container> {children}</Container>
+    </main>
+  );
 }

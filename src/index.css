@@ -1,6 +1,16 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes:
-    light --default,
-    dark;
+  themes: night --default;
+}
+
+:root {
+  --font-chakra: "Chakra Petch", sans-serif;
+}
+
+@theme inline {
+  --default-font-family: var(--font-chakra), var(--font-sans);
+}
+
+.menu a.active {
+  @apply text-primary font-semibold;
 }
