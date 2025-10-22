@@ -34,6 +34,10 @@ export default function LoginPage() {
         // console.log(errorMessage);
         if (errorCode === "auth/invalid-email") {
           toast.error("Invalid email format. Please check your email.");
+        } else if (errorCode === "auth/invalid-credential") {
+          toast.error(
+            "User not found. Please enter correct email and password",
+          );
         } else if (errorCode === "auth/user-not-found") {
           toast.error("User not found. Please sign up first.");
         } else if (errorCode === "auth/wrong-password") {
