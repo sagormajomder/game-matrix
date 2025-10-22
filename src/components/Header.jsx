@@ -1,4 +1,5 @@
 import { Link, NavLink } from "react-router";
+import HeaderLogo from "../assets/logo.png";
 
 export default function Header() {
   const links = (
@@ -54,8 +55,11 @@ export default function Header() {
               {links}
             </ul>
           </div>
-          <Link className="text-2xl font-semibold" to="/">
-            GameMatrix
+          <Link className="flex items-center gap-0.5" to="/">
+            <img className="h-12 -rotate-30" src={HeaderLogo} alt="" />
+            <span className="text-2xl font-bold">
+              Game<span className="text-primary">Matrix</span>{" "}
+            </span>
           </Link>
         </div>
         <div className="navbar-end hidden sm:flex">
