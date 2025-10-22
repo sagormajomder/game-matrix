@@ -4,6 +4,7 @@ import GamesPage from "../pages/GamesPage";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
 import RegisterPage from "../pages/RegisterPage";
+import ResetPasswordPage from "../pages/ResetPasswordPage";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/login",
         Component: LoginPage,
+      },
+      {
+        path: "/reset-password",
+        Component: ResetPasswordPage,
       },
       {
         path: "/games",

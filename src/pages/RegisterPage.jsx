@@ -47,6 +47,13 @@ export default function RegisterPage() {
               .then(() => {
                 toast.success("User registration successful.");
                 setIsLoading(false);
+
+                // Clear Values
+                setDisplayName("");
+                setPhotoURL("");
+                setEmail("");
+                setPassword("");
+
                 navigate("/login");
               })
               .catch((error) => {
@@ -90,12 +97,6 @@ export default function RegisterPage() {
     //   email,
     //   password,
     // });
-
-    // Clear Values
-    setDisplayName("");
-    setPhotoURL("");
-    setEmail("");
-    setPassword("");
   }
 
   return (

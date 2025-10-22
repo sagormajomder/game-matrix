@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router";
 import { toast } from "react-toastify";
@@ -6,11 +6,10 @@ import GoogleLogin from "../components/GoogleLogin";
 import { useAuth } from "../contexts/AuthContext";
 
 export default function LoginPage() {
-  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [showPassword, setShowPassword] = useState(false);
 
-  const { signInUser, setIsLoading } = useAuth();
+  const { signInUser, setIsLoading, loginEmail, setLoginEmail } = useAuth();
   const navigate = useNavigate();
   const location = useLocation();
 
@@ -21,6 +20,11 @@ export default function LoginPage() {
       .then((userCredential) => {
         setIsLoading(false);
         toast.success("user log in successfully!");
+
+        // Clear info
+        setLoginEmail("");
+        setPassword("");
+
         navigate(location.state ?? "/");
       })
       .catch((error) => {
@@ -49,6 +53,10 @@ export default function LoginPage() {
       });
   }
 
+  useEffect(function () {
+    setLoginEmail("");
+  }, []);
+
   return (
     <>
       <title>Game Matrix - User Login</title>
@@ -70,8 +78,8 @@ export default function LoginPage() {
                   type="email"
                   className="input w-full placeholder:text-gray-100/20"
                   placeholder="Email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
+                  value={loginEmail}
+                  onChange={(e) => setLoginEmail(e.target.value)}
                   required
                 />
 
