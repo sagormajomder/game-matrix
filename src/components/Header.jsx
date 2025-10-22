@@ -1,7 +1,26 @@
-import { Link, NavLink } from "react-router";
+import { Link, NavLink, useNavigate } from "react-router";
+import { toast } from "react-toastify";
 import HeaderLogo from "../assets/logo.png";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function Header() {
+  const { user, signOutUser, isLoading, setIsLoading } = useAuth();
+
+  const navigate = useNavigate();
+
+  function handleLogOut() {
+    signOutUser()
+      .then(() => {
+        toast.success("User logout successful.");
+        setIsLoading(false);
+        navigate("/");
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error(error.message);
+      });
+  }
+
   const links = (
     <>
       <li>
@@ -14,22 +33,44 @@ export default function Header() {
           Games
         </NavLink>
       </li>
-      <li>
-        <NavLink className="rounded-sm" to="/register">
-          Register
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          // className="bg-primary text-base-100 rounded-sm px-3 py-1.5 font-semibold"
-          className="rounded-sm"
-          to="/login"
-        >
-          Login
-        </NavLink>
-      </li>
+      {!user && (
+        <>
+          <li>
+            <NavLink className="rounded-sm" to="/register">
+              Register
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              // className="bg-primary text-base-100 rounded-sm px-3 py-1.5 font-semibold"
+              className="rounded-sm"
+              to="/login"
+            >
+              Login
+            </NavLink>
+          </li>
+        </>
+      )}
+      {user && (
+        <div className="mt-2 flex items-center gap-3 sm:mt-0">
+          <Link to="/profile" className="overflow-hidden rounded-full p-0">
+            <img
+              className="h-8 w-8 rounded-full object-cover"
+              src={user?.photoURL}
+              alt="User Profile Picture"
+            />
+          </Link>
+          <button
+            className="bg-primary text-base-100 w-3/4 cursor-pointer rounded-sm px-3 py-1.5 font-semibold sm:w-auto"
+            onClick={handleLogOut}
+          >
+            LogOut
+          </button>
+        </div>
+      )}
     </>
   );
+
   return (
     <header className="bg-base-300 shadow-sm">
       <nav className="navbar mx-auto max-w-7xl px-4">
@@ -66,8 +107,10 @@ export default function Header() {
             </span>
           </Link>
         </div>
-        <div className="navbar-end hidden sm:flex">
-          <ul className="menu menu-horizontal px-1">{links}</ul>
+        <div className="navbar-end hidden items-center sm:flex">
+          <ul className="menu menu-horizontal items-center gap-1 px-1">
+            {links}
+          </ul>
         </div>
       </nav>
     </header>

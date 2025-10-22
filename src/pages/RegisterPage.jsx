@@ -83,12 +83,12 @@ export default function RegisterPage() {
         setIsLoading(false);
       });
 
-    console.log("Form submitted successfully", {
-      displayName,
-      photoURL,
-      email,
-      password,
-    });
+    // console.log("Form submitted successfully", {
+    //   displayName,
+    //   photoURL,
+    //   email,
+    //   password,
+    // });
 
     // Clear Values
     setDisplayName("");
@@ -98,107 +98,110 @@ export default function RegisterPage() {
   }
 
   return (
-    <section className="flex items-center justify-center py-14">
-      <div className="card bg-base-200 w-full max-w-md shrink-0 items-center justify-center shadow-2xl">
-        <div className="card-body w-full max-w-md">
-          <h2 className="text-center text-2xl font-semibold">
-            Register your account
-          </h2>
-          <form onSubmit={handleRegistration}>
-            <fieldset className="fieldset">
-              {/* Name  */}
-              <label htmlFor="name" className="label">
-                Name
-              </label>
-              <input
-                id="name"
-                name="name"
-                type="text"
-                className="input w-full placeholder:text-gray-100/20"
-                placeholder="Name"
-                value={displayName}
-                onChange={(e) => setDisplayName(e.target.value)}
-                required
-              />
-
-              {/* Photo URl  */}
-              <label htmlFor="photo" className="label">
-                Photo URL{" "}
-              </label>
-              <input
-                name="photo"
-                id="photo"
-                type="text"
-                className="input w-full placeholder:text-gray-100/20"
-                placeholder="Photo URL"
-                value={photoURL}
-                onChange={(e) => setPhotoURL(e.target.value)}
-                required
-              />
-
-              {/* email  */}
-              <label htmlFor="email" className="label">
-                Email
-              </label>
-              <input
-                name="email"
-                id="email"
-                type="email"
-                className="input w-full placeholder:text-gray-100/20"
-                placeholder="Email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-              />
-
-              {/* password  */}
-              <label htmlFor="password" className="label">
-                Password
-              </label>
-              <div className="relative">
+    <>
+      <title>Game Matrix - User Registration</title>
+      <section className="flex items-center justify-center py-14">
+        <div className="card bg-base-200 w-full max-w-md shrink-0 items-center justify-center shadow-2xl">
+          <div className="card-body w-full max-w-md">
+            <h2 className="text-center text-2xl font-semibold">
+              Register your account
+            </h2>
+            <form onSubmit={handleRegistration}>
+              <fieldset className="fieldset">
+                {/* Name  */}
+                <label htmlFor="name" className="label">
+                  Name
+                </label>
                 <input
-                  name="password"
-                  id="password"
-                  type={showPassword ? "text" : "password"}
-                  className="input w-full pr-12 placeholder:text-gray-100/20"
-                  placeholder="Password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
+                  id="name"
+                  name="name"
+                  type="text"
+                  className="input w-full placeholder:text-gray-100/20"
+                  placeholder="Name"
+                  value={displayName}
+                  onChange={(e) => setDisplayName(e.target.value)}
                   required
                 />
-                {password.length > 0 && (
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute top-1/2 right-3 z-10 -translate-y-1/2 cursor-pointer text-xl hover:text-gray-400"
-                  >
-                    {showPassword ? (
-                      <AiOutlineEyeInvisible />
-                    ) : (
-                      <AiOutlineEye />
-                    )}
-                  </button>
-                )}
-              </div>
-              <p className="mt-1 text-sm text-gray-500">
-                Password length must be at least 6 chararacter, must have both
-                lower (a-z) and upper case letters (A-Z)
-              </p>
 
-              <button type="submit" className="btn btn-neutral my-4">
-                Register
-              </button>
+                {/* Photo URl  */}
+                <label htmlFor="photo" className="label">
+                  Photo URL{" "}
+                </label>
+                <input
+                  name="photo"
+                  id="photo"
+                  type="text"
+                  className="input w-full placeholder:text-gray-100/20"
+                  placeholder="Photo URL"
+                  value={photoURL}
+                  onChange={(e) => setPhotoURL(e.target.value)}
+                  required
+                />
 
-              <p className="text-center font-semibold">
-                Already have an account ?{" "}
-                <Link to="/login" className="text-secondary">
-                  Login here
-                </Link>
-              </p>
-            </fieldset>
-          </form>
+                {/* email  */}
+                <label htmlFor="email" className="label">
+                  Email
+                </label>
+                <input
+                  name="email"
+                  id="email"
+                  type="email"
+                  className="input w-full placeholder:text-gray-100/20"
+                  placeholder="Email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  required
+                />
+
+                {/* password  */}
+                <label htmlFor="password" className="label">
+                  Password
+                </label>
+                <div className="relative">
+                  <input
+                    name="password"
+                    id="password"
+                    type={showPassword ? "text" : "password"}
+                    className="input w-full pr-12 placeholder:text-gray-100/20"
+                    placeholder="Password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    required
+                  />
+                  {password.length > 0 && (
+                    <button
+                      type="button"
+                      onClick={() => setShowPassword(!showPassword)}
+                      className="absolute top-1/2 right-3 z-10 -translate-y-1/2 cursor-pointer text-xl hover:text-gray-400"
+                    >
+                      {showPassword ? (
+                        <AiOutlineEyeInvisible />
+                      ) : (
+                        <AiOutlineEye />
+                      )}
+                    </button>
+                  )}
+                </div>
+                <p className="mt-1 text-sm text-gray-500">
+                  Password length must be at least 6 chararacter, must have both
+                  lower (a-z) and upper case letters (A-Z)
+                </p>
+
+                <button type="submit" className="btn btn-primary my-4">
+                  Register
+                </button>
+
+                <p className="text-center font-semibold">
+                  Already have an account ?{" "}
+                  <Link to="/login" className="text-secondary hover:underline">
+                    Login here
+                  </Link>
+                </p>
+              </fieldset>
+            </form>
+          </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }
