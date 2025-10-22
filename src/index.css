@@ -11,6 +11,9 @@
   --default-font-family: var(--font-chakra), var(--font-sans);
 }
 
-.menu a.active {
+.menu li:not(:last-child) a.active {
   @apply text-primary font-semibold;
 }
+/* .menu li:is(:last-child) a.active {
+  @apply bg-secondary;
+} */

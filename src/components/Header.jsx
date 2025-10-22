@@ -20,7 +20,10 @@ export default function Header() {
         </NavLink>
       </li>
       <li>
-        <NavLink className="rounded-sm" to="/login">
+        <NavLink
+          className="bg-primary text-base-100 rounded-sm px-3 py-1.5 font-semibold"
+          to="/login"
+        >
           Login
         </NavLink>
       </li>
