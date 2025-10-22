@@ -3,8 +3,10 @@ import RootLayout from "../layouts/RootLayout";
 import GamesPage from "../pages/GamesPage";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
+import ProfilePage from "../pages/ProfilePage";
 import RegisterPage from "../pages/RegisterPage";
 import ResetPasswordPage from "../pages/ResetPasswordPage";
+import ProfileUpdatePage from "./../pages/ProfileUpdatePage";
 
 const router = createBrowserRouter([
   {
@@ -16,6 +18,19 @@ const router = createBrowserRouter([
         Component: HomePage,
       },
       {
+        path: "/games",
+        Component: GamesPage,
+      },
+      {
+        path: "/profile",
+        element: <ProfilePage />,
+      },
+      {
+        path: "/update-profile",
+        element: <ProfileUpdatePage />,
+      },
+      // Auth
+      {
         path: "auth/register",
         Component: RegisterPage,
       },
@@ -26,10 +41,6 @@ const router = createBrowserRouter([
       {
         path: "auth/reset-password",
         Component: ResetPasswordPage,
-      },
-      {
-        path: "/games",
-        Component: GamesPage,
       },
     ],
   },

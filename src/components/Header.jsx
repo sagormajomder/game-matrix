@@ -1,3 +1,4 @@
+import { TbLogout } from "react-icons/tb";
 import { Link, NavLink, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import HeaderLogo from "../assets/logo.png";
@@ -28,7 +29,7 @@ export default function Header() {
           Home
         </NavLink>
       </li>
-      <li>
+      <li className={user ? "sm:mr-1" : ""}>
         <NavLink className="rounded-sm" to="/games">
           Games
         </NavLink>
@@ -64,7 +65,10 @@ export default function Header() {
             className="bg-primary text-base-100 w-3/4 cursor-pointer rounded-sm px-3 py-1.5 font-semibold sm:w-auto"
             onClick={handleLogOut}
           >
-            LogOut
+            <span className="inline-flex items-center gap-1">
+              <TbLogout />
+              LogOut
+            </span>
           </button>
         </div>
       )}

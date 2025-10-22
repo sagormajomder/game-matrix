@@ -27,7 +27,7 @@
 
 ## Necessary Links
 
-- Live Link [Netlify](https://netlify.com)
+- Live Link [firebase link](https://game-matrix-sm.web.app/)
 
 ## Connect with Me
 

@@ -13,8 +13,6 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
 
-  console.log(loginEmail);
-
   function HandleLogin(e) {
     e.preventDefault();
 

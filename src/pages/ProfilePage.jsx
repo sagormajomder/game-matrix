@@ -1,0 +1,36 @@
+import { MdOutlineUpdate } from "react-icons/md";
+import { Link } from "react-router";
+import { useAuth } from "../contexts/AuthContext";
+
+export default function ProfilePage() {
+  const { user } = useAuth();
+  return (
+    <>
+      <title>Game Matrix - My Profile</title>
+      <section className="flex items-center justify-center py-14">
+        {/* <h2>Welcome, {user?.displayName}</h2> */}
+        <div className="flex flex-col items-center gap-8 rounded-lg bg-gray-200 p-5">
+          <img
+            className="border-primary h-40 w-40 rounded-full border-4 object-cover"
+            src={user?.photoURL}
+            alt="Profile Picture"
+          />
+
+          <div className="text-base-300 grid grid-cols-1 items-center gap-y-1 sm:grid-cols-[7.8125rem_15.625rem] sm:gap-y-2">
+            <span>Full Name: </span>
+            <span className="bg-base-100 mb-4 rounded-sm px-3 py-1 font-medium text-gray-300 sm:mb-0">
+              {user?.displayName}
+            </span>
+            <span>Email Address: </span>
+            <span className="bg-base-100 rounded-sm px-3 py-1 font-medium text-gray-300">
+              {user?.email}
+            </span>
+          </div>
+          <Link to="/update-profile" className="btn btn-primary">
+            <MdOutlineUpdate /> Update Profile
+          </Link>
+        </div>
+      </section>
+    </>
+  );
+}
