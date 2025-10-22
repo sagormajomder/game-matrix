@@ -53,12 +53,6 @@ export default function ResetPasswordPage() {
               </button>
             </fieldset>
           </form>
-          <p className="text-center font-semibold">
-            Don’t Have An Account ?{" "}
-            <Link to="/register" className="text-secondary">
-              Register here
-            </Link>
-          </p>
         </div>
       </div>
     </section>
