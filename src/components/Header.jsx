@@ -21,7 +21,8 @@ export default function Header() {
       </li>
       <li>
         <NavLink
-          className="bg-primary text-base-100 rounded-sm px-3 py-1.5 font-semibold"
+          // className="bg-primary text-base-100 rounded-sm px-3 py-1.5 font-semibold"
+          className="rounded-sm"
           to="/login"
         >
           Login
