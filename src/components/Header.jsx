@@ -36,7 +36,7 @@ export default function Header() {
       {!user && (
         <>
           <li>
-            <NavLink className="rounded-sm" to="/register">
+            <NavLink className="rounded-sm" to="/auth/register">
               Register
             </NavLink>
           </li>
@@ -44,7 +44,7 @@ export default function Header() {
             <NavLink
               // className="bg-primary text-base-100 rounded-sm px-3 py-1.5 font-semibold"
               className="rounded-sm"
-              to="/login"
+              to="/auth/login"
             >
               Login
             </NavLink>

@@ -54,7 +54,7 @@ export default function RegisterPage() {
                 setEmail("");
                 setPassword("");
 
-                navigate("/login");
+                navigate("/auth/login");
               })
               .catch((error) => {
                 console.log(error);
@@ -198,7 +198,7 @@ export default function RegisterPage() {
             <GoogleLogin />
             <p className="text-center font-semibold">
               Already have an account ?{" "}
-              <Link to="/login" className="text-secondary hover:underline">
+              <Link to="/auth/login" className="text-secondary hover:underline">
                 Login here
               </Link>
             </p>

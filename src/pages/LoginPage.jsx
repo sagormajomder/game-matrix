@@ -13,10 +13,12 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  console.log(loginEmail);
+
   function HandleLogin(e) {
     e.preventDefault();
 
-    signInUser(email, password)
+    signInUser(loginEmail, password)
       .then((userCredential) => {
         setIsLoading(false);
         toast.success("user log in successfully!");
@@ -117,7 +119,7 @@ export default function LoginPage() {
                   )}
                 </div>
                 <div>
-                  <Link to="/reset-password" className="link link-hover">
+                  <Link to="/auth/reset-password" className="link link-hover">
                     Forgot password?
                   </Link>
                 </div>
@@ -131,7 +133,10 @@ export default function LoginPage() {
             <GoogleLogin />
             <p className="text-center font-semibold">
               Don’t have an account ?{" "}
-              <Link to="/register" className="text-secondary hover:underline">
+              <Link
+                to="/auth/register"
+                className="text-secondary hover:underline"
+              >
                 Registration here
               </Link>
             </p>

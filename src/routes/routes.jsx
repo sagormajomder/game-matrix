@@ -16,15 +16,15 @@ const router = createBrowserRouter([
         Component: HomePage,
       },
       {
-        path: "/register",
+        path: "auth/register",
         Component: RegisterPage,
       },
       {
-        path: "/login",
+        path: "auth/login",
         Component: LoginPage,
       },
       {
-        path: "/reset-password",
+        path: "auth/reset-password",
         Component: ResetPasswordPage,
       },
       {

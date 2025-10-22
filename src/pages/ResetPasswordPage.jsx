@@ -17,7 +17,7 @@ export default function ResetPasswordPage() {
         // Clear
         setLoginEmail("");
 
-        navigate("/login");
+        navigate("/auth/login");
       })
       .catch((error) => {
         console.log(error);
