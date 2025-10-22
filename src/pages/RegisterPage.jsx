@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link, useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import GoogleLogin from "../components/GoogleLogin";
 import { useAuth } from "../contexts/AuthContext";
 
 export default function RegisterPage() {
@@ -187,18 +188,19 @@ export default function RegisterPage() {
                   lower (a-z) and upper case letters (A-Z)
                 </p>
 
-                <button type="submit" className="btn btn-primary my-4">
+                <button type="submit" className="btn btn-primary mt-2">
                   Register
                 </button>
-
-                <p className="text-center font-semibold">
-                  Already have an account ?{" "}
-                  <Link to="/login" className="text-secondary hover:underline">
-                    Login here
-                  </Link>
-                </p>
               </fieldset>
             </form>
+            <div className="divider">OR</div>
+            <GoogleLogin />
+            <p className="text-center font-semibold">
+              Already have an account ?{" "}
+              <Link to="/login" className="text-secondary hover:underline">
+                Login here
+              </Link>
+            </p>
           </div>
         </div>
       </section>

@@ -2,6 +2,7 @@ import { useState } from "react";
 import { AiOutlineEye, AiOutlineEyeInvisible } from "react-icons/ai";
 import { Link, useLocation, useNavigate } from "react-router";
 import { toast } from "react-toastify";
+import GoogleLogin from "../components/GoogleLogin";
 import { useAuth } from "../contexts/AuthContext";
 
 export default function LoginPage() {
@@ -109,21 +110,19 @@ export default function LoginPage() {
                   </Link>
                 </div>
 
-                <button type="submit" className="btn btn-primary my-4">
+                <button type="submit" className="btn btn-primary mt-2">
                   Login
                 </button>
-
-                <p className="text-center font-semibold">
-                  Don’t have an account ?{" "}
-                  <Link
-                    to="/register"
-                    className="text-secondary hover:underline"
-                  >
-                    Registration here
-                  </Link>
-                </p>
               </fieldset>
             </form>
+            <div className="divider">OR</div>
+            <GoogleLogin />
+            <p className="text-center font-semibold">
+              Don’t have an account ?{" "}
+              <Link to="/register" className="text-secondary hover:underline">
+                Registration here
+              </Link>
+            </p>
           </div>
         </div>
       </section>
