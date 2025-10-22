@@ -1,23 +1,17 @@
-import { Link, useNavigate } from "react-router";
+import { Link } from "react-router";
 import { toast } from "react-toastify";
 import { useAuth } from "../contexts/AuthContext";
 
 export default function ResetPasswordPage() {
   const { loginEmail, setLoginEmail, resetPasswordBySendEmail } = useAuth();
 
-  const navigate = useNavigate();
-
-  function handleForgetPassword(e) {
-    e.preventDefault();
-
+  function handleForgetPassword() {
     resetPasswordBySendEmail(loginEmail)
       .then(() => {
         toast.success("Check your email for reset password.");
 
         // Clear
         setLoginEmail("");
-
-        navigate("/auth/login");
       })
       .catch((error) => {
         console.log(error);
@@ -50,9 +44,14 @@ export default function ResetPasswordPage() {
                   onChange={(e) => setLoginEmail(e.target.value)}
                   required
                 />
-                <button type="submit" className="btn btn-primary my-4">
+                <Link
+                  to="https://gmail.com"
+                  type="submit"
+                  onClick={handleForgetPassword}
+                  className="btn btn-primary my-4"
+                >
                   Send password reset email
-                </button>
+                </Link>
               </fieldset>
             </form>
           </div>
