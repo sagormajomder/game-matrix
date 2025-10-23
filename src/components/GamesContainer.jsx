@@ -1,13 +1,13 @@
+import { motion } from "motion/react";
 import { useEffect, useState } from "react";
 import { Link } from "react-router";
 import ratingsIcon from "../assets/icon-ratings.png";
-// import NotFoundApps from "./NotFoundApps";
-import { motion } from "motion/react";
+import GameNotFound from "./GameNotFound";
 
 export default function GamesContainer({
   games,
   search = "",
-  onTotalData = () => {},
+  onTotalGames = () => {},
 }) {
   const [loading, setLoading] = useState(true);
 
@@ -17,27 +17,23 @@ export default function GamesContainer({
       .includes(search.replace(/\s+/g, " ").trim().toLowerCase()),
   );
 
-  useEffect(
-    function () {
-      setLoading(true);
-      setTimeout(() => {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        filterGames = games.filter((game) =>
-          game.title
-            .toLowerCase()
-            .includes(search.replace(/\s+/g, " ").trim().toLowerCase()),
-        );
-        setLoading(false);
-      }, 600);
-    },
-    [games, search],
-  );
+  useEffect(function () {
+    setLoading(true);
+    setTimeout(() => {
+      filterGames = games.filter((game) =>
+        game.title
+          .toLowerCase()
+          .includes(search.replace(/\s+/g, " ").trim().toLowerCase()),
+      );
+      setLoading(false);
+    }, 600);
+  }, []);
 
   useEffect(
     function () {
-      onTotalData(filterGames.length);
+      onTotalGames(filterGames.length);
     },
-    [filterGames.length, onTotalData],
+    [filterGames.length],
   );
 
   // Search Loading
@@ -49,9 +45,9 @@ export default function GamesContainer({
     );
   }
 
-  // if (filterGames.length === 0) {
-  //   return <NotFoundApps message="No App Found" buttonText="Show All" />;
-  // }
+  if (filterGames.length === 0) {
+    return <GameNotFound message="No Game Found" />;
+  }
 
   return (
     <div className="xs:grid-cols-2 grid grid-cols-1 gap-8 md:grid-cols-3">

@@ -54,7 +54,7 @@ export default function Header() {
         </>
       )}
       {user && (
-        <div className="mt-2 flex items-center gap-4 min-[25rem]:hidden sm:mt-0 sm:flex">
+        <div className="mt-2 ml-2 flex items-center gap-2.5 min-[25rem]:hidden sm:mt-0 sm:ml-0 sm:flex sm:gap-4">
           {isLoading ? (
             <span className="loading loading-ring loading-xl"></span>
           ) : (

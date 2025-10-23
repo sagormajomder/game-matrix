@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import RootLayout from "../layouts/RootLayout";
+import GameDetailsPage from "../pages/GameDetailsPage";
 import GamesPage from "../pages/GamesPage";
 import HomePage from "../pages/HomePage";
 import LoginPage from "../pages/LoginPage";
@@ -21,10 +22,11 @@ const router = createBrowserRouter([
       {
         path: "/games",
         Component: GamesPage,
+        loader: async () => fetch("../games.json"),
       },
       {
         path: "/game-details/:id",
-        Component: GamesPage,
+        element: <GameDetailsPage />,
       },
       {
         path: "/profile",

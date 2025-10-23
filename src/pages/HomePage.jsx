@@ -1,5 +1,6 @@
 import { useLoaderData } from "react-router";
 import Banner from "../components/homepage/Banner";
+import Newsletter from "../components/homepage/Newsletter";
 import PopularGames from "../components/homepage/PopularGames";
 
 export default function HomePage() {
@@ -8,6 +9,7 @@ export default function HomePage() {
     <>
       <Banner games={data.slice(0, 5)} />
       <PopularGames games={data.slice(0, 6)} />
+      <Newsletter />
     </>
   );
 }

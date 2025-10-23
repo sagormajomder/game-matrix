@@ -10,10 +10,10 @@ export default function PopularGames({ games }) {
     <section className="my-8 space-y-10 py-14">
       <SectionTitle
         title="Popular Games"
-        desc="Explore All Popular Games among the gamer"
+        desc="Explore trending games loved by gamers, ready to play"
       />
       <GamesContainer games={sortedGames} />
-      <div className="text-center">
+      <div className="-mt-4 text-center">
         <Link
           className="btn btn-primary max-w-fit px-8 text-center"
           to="/games"
