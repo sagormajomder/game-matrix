@@ -76,7 +76,7 @@ export default function Header() {
   );
 
   return (
-    <header className="bg-base-300 shadow-sm">
+    <header className="bg-base-300 border border-gray-800">
       <nav className="navbar mx-auto max-w-7xl px-4">
         <div className="navbar-start basis-full sm:basis-1/2">
           <div className="dropdown">
@@ -99,7 +99,7 @@ export default function Header() {
             </div>
             <ul
               tabIndex="-1"
-              className="menu menu-sm dropdown-content bg-base-300 z-1 mt-3 w-52 rounded-md p-2 shadow"
+              className="menu menu-sm dropdown-content bg-base-300 z-1 mt-3 w-52 rounded-md border border-gray-800 p-2"
             >
               {links}
             </ul>

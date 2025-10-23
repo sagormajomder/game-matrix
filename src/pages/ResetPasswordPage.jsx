@@ -23,7 +23,7 @@ export default function ResetPasswordPage() {
     <>
       <title>Game Matrix - Reset Password</title>
       <section className="flex items-center justify-center py-14">
-        <div className="card bg-base-200 w-full max-w-sm shrink-0 shadow-2xl">
+        <div className="card bg-base-200 w-full max-w-sm shrink-0 border border-gray-800">
           <div className="card-body">
             <h2 className="text-center text-2xl font-semibold">
               Reset your password

@@ -65,7 +65,7 @@ export default function LoginPage() {
     <>
       <title>Game Matrix - User Login</title>
       <section className="flex items-center justify-center py-14">
-        <div className="card bg-base-200 w-full max-w-md shrink-0 items-center justify-center shadow-2xl">
+        <div className="card bg-base-200 w-full max-w-md shrink-0 items-center justify-center border border-gray-800">
           <div className="card-body w-full max-w-md">
             <h2 className="text-center text-2xl font-semibold">
               Login your account
