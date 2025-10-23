@@ -12,23 +12,26 @@ export default function GamesPage() {
   console.log(games, search, totalGames);
 
   return (
-    <section className="space-y-10 py-14">
-      <SectionTitle
-        title="Games"
-        desc="Explore unique indie games crafted by passionate developers worldwide"
-      />
-      {/* Search and Title */}
-      <GamesHeading
-        totalGames={totalGames}
-        search={search}
-        onSearch={setSearch}
-      />
-      {/* Apps Container */}
-      <GamesContainer
-        games={games}
-        search={search}
-        onTotalGames={setTotalGames}
-      />
-    </section>
+    <>
+      <title>Game Matrix - Games</title>
+      <section className="space-y-10 py-14">
+        <SectionTitle
+          title="Games"
+          desc="Explore unique indie games crafted by passionate developers worldwide"
+        />
+        {/* Search and Title */}
+        <GamesHeading
+          totalGames={totalGames}
+          search={search}
+          onSearch={setSearch}
+        />
+        {/* Apps Container */}
+        <GamesContainer
+          games={games}
+          search={search}
+          onTotalGames={setTotalGames}
+        />
+      </section>
+    </>
   );
 }
