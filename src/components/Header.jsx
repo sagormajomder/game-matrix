@@ -54,13 +54,17 @@ export default function Header() {
       )}
       {user && (
         <div className="mt-2 flex items-center gap-3 sm:mt-0">
-          <Link to="/profile" className="overflow-hidden rounded-full p-0">
-            <img
-              className="h-8 w-8 rounded-full object-cover"
-              src={user?.photoURL}
-              alt="User Profile Picture"
-            />
-          </Link>
+          {isLoading ? (
+            <span className="loading loading-ring loading-xl"></span>
+          ) : (
+            <Link to="/profile" className="overflow-hidden rounded-full p-0">
+              <img
+                className="h-8 w-8 rounded-full object-cover"
+                src={user?.photoURL}
+                alt="User Profile Picture"
+              />
+            </Link>
+          )}
           <button
             className="bg-primary text-base-100 w-3/4 cursor-pointer rounded-sm px-3 py-1.5 font-semibold sm:w-auto"
             onClick={handleLogOut}

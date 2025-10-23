@@ -1,11 +1,59 @@
 import { useState } from "react";
 import { MdOutlineUpdate } from "react-icons/md";
+import { useNavigate } from "react-router";
+import { toast } from "react-toastify";
+import { useAuth } from "../contexts/AuthContext";
 
 export default function ProfileUpdatePage() {
   const [displayName, setDisplayName] = useState("");
   const [photoURL, setPhotoURL] = useState("");
+  const { updateUserProfile, setIsLoading } = useAuth();
 
-  function handleProfileUpdate() {}
+  const navigate = useNavigate();
+
+  function handleProfileUpdate(e) {
+    e.preventDefault();
+
+    if (!displayName && !photoURL) {
+      toast.error("To update, please enter your info");
+      return;
+    }
+
+    const updatedInfo = {};
+
+    setIsLoading(true);
+
+    if (displayName) {
+      updatedInfo.displayName = displayName
+        .split(" ")
+        .filter((w) => w)
+        .join(" ");
+    }
+
+    if (photoURL) {
+      updatedInfo.photoURL = photoURL
+        .split(" ")
+        .filter((w) => w)
+        .join("");
+    }
+
+    // console.log(updatedInfo);
+
+    updateUserProfile(updatedInfo)
+      .then(() => {
+        toast.success("Successfully Profile info updated!");
+        setIsLoading(false);
+        navigate("/profile");
+      })
+      .catch((error) => {
+        console.log(error);
+        toast.error(error.message);
+      })
+      .finally(() => {
+        setIsLoading(false);
+      });
+  }
+
   return (
     <>
       <title>Game Matrix - Update Profile</title>
@@ -29,7 +77,6 @@ export default function ProfileUpdatePage() {
                   placeholder="Name"
                   value={displayName}
                   onChange={(e) => setDisplayName(e.target.value)}
-                  required
                 />
 
                 {/* Photo URl  */}
@@ -44,11 +91,10 @@ export default function ProfileUpdatePage() {
                   placeholder="Photo URL"
                   value={photoURL}
                   onChange={(e) => setPhotoURL(e.target.value)}
-                  required
                 />
 
                 <button type="submit" className="btn btn-primary mt-2">
-                  <MdOutlineUpdate /> Update Profile
+                  <MdOutlineUpdate /> Update Info
                 </button>
               </fieldset>
             </form>
