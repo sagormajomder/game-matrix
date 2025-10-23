@@ -16,6 +16,7 @@ const router = createBrowserRouter([
       {
         index: true,
         Component: HomePage,
+        loader: async () => fetch("../games.json"),
       },
       {
         path: "/games",

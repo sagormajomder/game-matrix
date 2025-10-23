@@ -1,5 +1,11 @@
-import { motion } from "motion/react";
+import { useLoaderData } from "react-router";
+import Banner from "../components/homepage/Banner";
 
 export default function HomePage() {
-  return <div>HomePage</div>;
+  const data = useLoaderData();
+  return (
+    <>
+      <Banner games={data.slice(0, 5)} />
+    </>
+  );
 }

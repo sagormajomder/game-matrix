@@ -9,6 +9,8 @@
 
 @theme inline {
   --default-font-family: var(--font-chakra), var(--font-sans);
+
+  --breakpoint-xs: 30rem;
 }
 
 /* .menu li:not(:last-child) a.active { */

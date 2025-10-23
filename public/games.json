@@ -1,0 +1,102 @@
+[
+  {
+    "id": 1,
+    "title": "Hollow Knight",
+    "coverPhoto": "https://i.ibb.co.com/KjGM8c8d/4643fb058642335c523910f3a7910575f56372f612f7c0c9a497aaae978d3e51-1024x576.jpg",
+    "category": "Metroidvania / Action-Adventure",
+    "downloadLink": "https://store.steampowered.com/app/367520/Hollow_Knight/",
+    "description": "A challenging action-adventure set in the ruined kingdom of Hallownest, featuring fluid combat, exploration, and atmospheric design.",
+    "ratings": 9.4,
+    "developer": "Team Cherry"
+  },
+  {
+    "id": 2,
+    "title": "Dead Cells",
+    "coverPhoto": "https://i.ibb.co.com/3tFbMdB/dead-cells-switch-hero.jpg",
+    "category": "Roguelike / Metroidvania",
+    "downloadLink": "https://store.steampowered.com/app/588650/Dead_Cells/",
+    "description": "A roguelike action-platformer with fast-paced combat, procedurally generated levels, and a wide arsenal of weapons and abilities.",
+    "ratings": 9.1,
+    "developer": "Motion Twin"
+  },
+  {
+    "id": 3,
+    "title": "Katana ZERO",
+    "coverPhoto": "https://i.ibb.co.com/qM0Jpkjz/katana-zero-f8dgrxw2948ay8jn.jpg",
+    "category": "Action / Platformer",
+    "downloadLink": "https://store.steampowered.com/app/460950/Katana_ZERO/",
+    "description": "A stylish neo-noir action platformer featuring instant-death combat, time manipulation, and a gripping narrative.",
+    "ratings": 8.9,
+    "developer": "Askiisoft"
+  },
+  {
+    "id": 4,
+    "title": "Cuphead",
+    "coverPhoto": "https://i.ibb.co.com/84tNRXg5/cuphead-poster-in-yellow-m5xzoa08880poctv.jpg",
+    "category": "Run and Gun / Action",
+    "downloadLink": "https://store.steampowered.com/app/268910/Cuphead/",
+    "description": "A run-and-gun action game inspired by 1930s cartoons, known for its hand-drawn animation, tough bosses, and jazzy soundtrack.",
+    "ratings": 9.1,
+    "developer": "Studio MDHR"
+  },
+  {
+    "id": 5,
+    "title": "Enter the Gungeon",
+    "coverPhoto": "https://i.ibb.co.com/Y7C9nfmL/Enter-Exit-the-Gungeon-Mobile-Key-Art.webp",
+    "category": "Bullet Hell / Roguelike",
+    "downloadLink": "https://store.steampowered.com/app/311690/Enter_the_Gungeon/",
+    "description": "A bullet-hell dungeon crawler where players fight through procedurally generated levels to find a gun that can kill the past.",
+    "ratings": 8.9,
+    "developer": "Dodge Roll"
+  },
+  {
+    "id": 6,
+    "title": "Hotline Miami",
+    "coverPhoto": "https://i.ibb.co.com/vvXCQx7g/hmfeatureed-e1666484434336.jpg",
+    "category": "Top-Down Shooter / Action",
+    "downloadLink": "https://store.steampowered.com/app/219150/Hotline_Miami/",
+    "description": "A brutal top-down action game with fast-paced combat, surreal storytelling, and a legendary synthwave soundtrack.",
+    "ratings": 9.0,
+    "developer": "Dennaton Games"
+  },
+  {
+    "id": 7,
+    "title": "Risk of Rain 2",
+    "coverPhoto": "https://i.ibb.co.com/YnfPBtc/risk-of-rain-2-heretic.jpg",
+    "category": "Roguelike / Third-Person Shooter",
+    "downloadLink": "https://store.steampowered.com/app/632360/Risk_of_Rain_2/",
+    "description": "A roguelike third-person shooter where players fight hordes of enemies, collect items, and scale difficulty as time progresses.",
+    "ratings": 9.0,
+    "developer": "Hopoo Games"
+  },
+  {
+    "id": 8,
+    "title": "The Binding of Isaac: Rebirth",
+    "coverPhoto": "https://i.ibb.co.com/8nwsDTct/54d7748b998eb250b6a2746d1d1ebe52976953b4056a8c1a2e3a99ababf2dc6a.jpg",
+    "category": "Roguelike / Action",
+    "downloadLink": "https://store.steampowered.com/app/250900/The_Binding_of_Isaac_Rebirth/",
+    "description": "A roguelike dungeon crawler with randomly generated levels, grotesque enemies, and hundreds of items to discover.",
+    "ratings": 9.1,
+    "developer": "Nicalis / Edmund McMillen"
+  },
+  {
+    "id": 9,
+    "title": "Furi",
+    "coverPhoto": "https://i.ibb.co.com/s9KFMBSp/uNKeq7.jpg",
+    "category": "Action / Boss Rush",
+    "downloadLink": "https://store.steampowered.com/app/423230/Furi/",
+    "description": "A fast-paced action game focused on intense boss battles, blending hack-and-slash combat with bullet-hell mechanics.",
+    "ratings": 8.7,
+    "developer": "The Game Bakers"
+  },
+  {
+    "id": 10,
+    "title": "Hyper Light Drifter",
+    "coverPhoto": "https://i.ibb.co.com/F4K56nzF/d0d2cfb4-654b-4569-94cd-9a6d055e4393.jpg",
+    "category": "Action RPG",
+    "downloadLink": "https://store.steampowered.com/app/257850/Hyper_Light_Drifter/",
+    "description": "A 2D action RPG with fast-paced combat, pixel art visuals, and a mysterious world inspired by classic 8-bit and 16-bit games.",
+    "ratings": 8.8,
+    "developer": "Heart Machine"
+  }
+]
