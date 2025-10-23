@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { MdOutlineUpdate } from "react-icons/md";
+import { FaUserEdit } from "react-icons/fa";
 import { Link } from "react-router";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -41,7 +41,7 @@ export default function ProfilePage() {
             </span>
           </div>
           <Link to="/update-profile" className="btn btn-primary">
-            <MdOutlineUpdate /> Update Profile
+            <FaUserEdit /> Update Profile
           </Link>
         </motion.div>
       </section>

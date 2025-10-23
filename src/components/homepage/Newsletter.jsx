@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { FaEnvelopeCircleCheck } from "react-icons/fa6";
 import { toast } from "react-toastify";
 import SectionTitle from "../SectionTitle";
 
@@ -46,7 +47,7 @@ to stay updated with fresh game news, tips, and indie releases"
           whileTap={{ scale: 0.97 }}
           className="btn btn-primary w-full sm:basis-1/3"
         >
-          Subscribe
+          <FaEnvelopeCircleCheck /> Subscribe
         </motion.button>
       </form>
     </section>

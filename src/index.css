@@ -13,8 +13,8 @@
   --breakpoint-xs: 30rem;
 }
 
-/* .menu li:not(:last-child) a.active { */
-.menu a.active {
+.menu li:not(:last-child) a.active {
+  /* .menu a.active { */
   @apply text-primary font-semibold;
 }
 

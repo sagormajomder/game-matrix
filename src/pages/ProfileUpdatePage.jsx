@@ -1,5 +1,6 @@
+import { motion } from "motion/react";
 import { useState } from "react";
-import { ImCheckmark } from "react-icons/im";
+import { FaUserCheck } from "react-icons/fa6";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { useAuth } from "../contexts/AuthContext";
@@ -58,7 +59,14 @@ export default function ProfileUpdatePage() {
     <>
       <title>Game Matrix - Update Profile</title>
       <section className="flex items-center justify-center py-14">
-        <div className="card bg-base-200 w-full max-w-md shrink-0 items-center justify-center border border-gray-800">
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{
+            duration: 0.3,
+          }}
+          className="card bg-base-200 w-full max-w-md shrink-0 items-center justify-center border border-gray-800"
+        >
           <div className="card-body w-full max-w-md">
             <h2 className="text-center text-2xl font-semibold">
               Update profile info
@@ -94,12 +102,12 @@ export default function ProfileUpdatePage() {
                 />
 
                 <button type="submit" className="btn btn-primary mt-2">
-                  <ImCheckmark /> Update Info
+                  <FaUserCheck /> Update Info
                 </button>
               </fieldset>
             </form>
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   );

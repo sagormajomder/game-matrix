@@ -1,4 +1,5 @@
 import { motion } from "motion/react";
+import { BiLogIn } from "react-icons/bi";
 import { TbLogout } from "react-icons/tb";
 import { Link, NavLink, useNavigate } from "react-router";
 import { toast } from "react-toastify";
@@ -42,14 +43,22 @@ export default function Header() {
               Register
             </NavLink>
           </li>
-          <li>
-            <NavLink
-              // className="bg-primary text-base-100 rounded-sm px-3 py-1.5 font-semibold"
-              className="rounded-sm"
-              to="/auth/login"
+          <li className="inline-flex min-[25rem]:hidden sm:inline-block">
+            <motion.button
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn btn-primary text-base-100 h-auto rounded-sm px-3 py-1 font-semibold"
             >
-              Login
-            </NavLink>
+              <NavLink
+                // className="rounded-sm"
+                to="/auth/login"
+              >
+                <span className="flex items-center justify-center gap-1">
+                  <BiLogIn /> Login
+                </span>
+              </NavLink>
+            </motion.button>
           </li>
         </>
       )}
@@ -130,8 +139,29 @@ export default function Header() {
             {links}
           </ul>
         </div>
-        <div className="navbar-end hidden items-center min-[25rem]:flex sm:hidden">
-          {user && (
+
+        {!user && (
+          <div className="navbar-end hidden items-center min-[25rem]:flex sm:hidden">
+            <motion.button
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn btn-primary text-base-100 h-auto rounded-sm px-3 py-1 font-semibold"
+            >
+              <NavLink
+                // className="rounded-sm"
+                to="/auth/login"
+              >
+                <span className="flex items-center justify-center gap-1">
+                  <BiLogIn /> Login
+                </span>
+              </NavLink>
+            </motion.button>
+          </div>
+        )}
+
+        {user && (
+          <div className="navbar-end hidden items-center min-[25rem]:flex sm:hidden">
             <div className="flex items-center gap-4 sm:hidden">
               {isLoading ? (
                 <span className="loading loading-ring loading-xl"></span>
@@ -166,8 +196,8 @@ export default function Header() {
                 </span>
               </motion.button>
             </div>
-          )}
-        </div>
+          </div>
+        )}
       </nav>
     </header>
   );

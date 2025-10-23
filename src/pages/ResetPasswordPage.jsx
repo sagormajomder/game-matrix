@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { toast } from "react-toastify";
 import { useAuth } from "../contexts/AuthContext";
 
@@ -28,7 +29,14 @@ export default function ResetPasswordPage() {
     <>
       <title>Game Matrix - Reset Password</title>
       <section className="flex items-center justify-center py-14">
-        <div className="card bg-base-200 w-full max-w-sm shrink-0 border border-gray-800">
+        <motion.div
+          initial={{ scale: 0 }}
+          animate={{ scale: 1 }}
+          transition={{
+            duration: 0.3,
+          }}
+          className="card bg-base-200 w-full max-w-sm shrink-0 border border-gray-800"
+        >
           <div className="card-body">
             <h2 className="text-center text-2xl font-semibold">
               Reset your password
@@ -55,7 +63,7 @@ export default function ResetPasswordPage() {
               </fieldset>
             </form>
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   );
