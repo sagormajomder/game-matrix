@@ -18,7 +18,6 @@ export default function LoginPage() {
 
     signInUser(loginEmail, password)
       .then((userCredential) => {
-        setIsLoading(false);
         toast.success("user log in successfully!");
 
         // Clear info
@@ -26,6 +25,7 @@ export default function LoginPage() {
         setPassword("");
 
         navigate(location.state ?? "/");
+        setIsLoading(false);
       })
       .catch((error) => {
         const errorCode = error.code;

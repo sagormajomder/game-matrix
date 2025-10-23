@@ -1,3 +1,4 @@
+import { motion } from "motion/react";
 import { TbLogout } from "react-icons/tb";
 import { Link, NavLink, useNavigate } from "react-router";
 import { toast } from "react-toastify";
@@ -53,27 +54,36 @@ export default function Header() {
         </>
       )}
       {user && (
-        <div className="mt-2 flex items-center gap-3 sm:mt-0">
+        <div className="mt-2 flex items-center gap-4 sm:mt-0">
           {isLoading ? (
             <span className="loading loading-ring loading-xl"></span>
           ) : (
-            <Link to="/profile" className="overflow-hidden rounded-full p-0">
-              <img
-                className="h-8 w-8 rounded-full object-cover"
-                src={user?.photoURL}
-                alt="User Profile Picture"
-              />
-            </Link>
+            <motion.button
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <Link to="/profile" className="overflow-hidden rounded-full p-0">
+                <img
+                  className="h-8 w-8 rounded-full object-cover"
+                  src={user?.photoURL}
+                  alt="User Profile Picture"
+                />
+              </Link>
+            </motion.button>
           )}
-          <button
-            className="bg-primary text-base-100 w-3/4 cursor-pointer rounded-sm px-3 py-1.5 font-semibold sm:w-auto"
+          <motion.button
+            initial={{ scale: 0 }}
+            animate={{ scale: 1 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-primary text-base-100 w-3/4 cursor-pointer rounded-sm px-3 py-1.5 font-semibold hover:bg-[#34abe1] sm:w-auto"
             onClick={handleLogOut}
           >
             <span className="inline-flex items-center gap-1">
               <TbLogout />
               LogOut
             </span>
-          </button>
+          </motion.button>
         </div>
       )}
     </>
