@@ -21,3 +21,17 @@
 /* .menu li:is(:last-child) a.active {
   @apply bg-secondary;
 } */
+
+@utility heading-2 {
+  @apply mb-4 text-2xl font-bold sm:text-4xl;
+}
+
+@utility heading-3 {
+  @apply mb-1 text-2xl font-bold md:text-3xl;
+}
+@utility heading-4 {
+  @apply text-xl font-semibold md:text-2xl;
+}
+@utility heading-5 {
+  @apply text-lg font-medium;
+}

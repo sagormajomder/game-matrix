@@ -23,6 +23,10 @@ const router = createBrowserRouter([
         Component: GamesPage,
       },
       {
+        path: "/game-details/:id",
+        Component: GamesPage,
+      },
+      {
         path: "/profile",
         element: <ProfilePage />,
       },

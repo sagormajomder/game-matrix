@@ -9,7 +9,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 export default function Banner({ games }) {
-  console.log(games);
   return (
     <section className="">
       <Swiper

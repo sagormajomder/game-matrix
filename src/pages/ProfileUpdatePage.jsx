@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MdOutlineUpdate } from "react-icons/md";
+import { ImCheckmark } from "react-icons/im";
 import { useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { useAuth } from "../contexts/AuthContext";
@@ -94,7 +94,7 @@ export default function ProfileUpdatePage() {
                 />
 
                 <button type="submit" className="btn btn-primary mt-2">
-                  <MdOutlineUpdate /> Update Info
+                  <ImCheckmark /> Update Info
                 </button>
               </fieldset>
             </form>
