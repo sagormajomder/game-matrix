@@ -1,17 +1,18 @@
 import { FcGoogle } from "react-icons/fc";
-import { useNavigate } from "react-router";
+import { useLocation, useNavigate } from "react-router";
 import { toast } from "react-toastify";
 import { useAuth } from "../contexts/AuthContext";
 
 export default function GoogleLogin() {
   const { signInWithGoogle, setIsLoading } = useAuth();
   const navigate = useNavigate();
+  const location = useLocation();
 
   function handleGoogleSignIn() {
     signInWithGoogle()
       .then(() => {
         toast.success("User login successfully");
-        navigate("/");
+        navigate(location.state ?? "/");
       })
       .catch((error) => {
         const errorCode = error.code;
