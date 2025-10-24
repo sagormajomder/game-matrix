@@ -17,17 +17,20 @@ export default function GamesContainer({
       .includes(search.replace(/\s+/g, " ").trim().toLowerCase()),
   );
 
-  useEffect(function () {
-    setLoading(true);
-    setTimeout(() => {
-      filterGames = games.filter((game) =>
-        game.title
-          .toLowerCase()
-          .includes(search.replace(/\s+/g, " ").trim().toLowerCase()),
-      );
-      setLoading(false);
-    }, 600);
-  }, []);
+  useEffect(
+    function () {
+      setLoading(true);
+      setTimeout(() => {
+        filterGames = games.filter((game) =>
+          game.title
+            .toLowerCase()
+            .includes(search.replace(/\s+/g, " ").trim().toLowerCase()),
+        );
+        setLoading(false);
+      }, 600);
+    },
+    [search],
+  );
 
   useEffect(
     function () {

@@ -7,12 +7,14 @@ import LoginPage from "../pages/LoginPage";
 import ProfilePage from "../pages/ProfilePage";
 import RegisterPage from "../pages/RegisterPage";
 import ResetPasswordPage from "../pages/ResetPasswordPage";
+import Loader from "./../components/Loader";
 import ProfileUpdatePage from "./../pages/ProfileUpdatePage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     Component: RootLayout,
+    hydrateFallbackElement: <Loader />,
     children: [
       {
         index: true,
