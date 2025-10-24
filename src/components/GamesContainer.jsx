@@ -48,11 +48,17 @@ export default function GamesContainer({
   }
 
   return (
-    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <motion.div
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+    >
       {filterGames.map((game) => (
         <GameCard key={game.id} game={game} />
       ))}
-    </div>
+    </motion.div>
   );
 }
 

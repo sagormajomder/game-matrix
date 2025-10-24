@@ -11,12 +11,13 @@ export default function ProfilePage() {
       <section className="flex items-center justify-center py-14">
         {/* <h2>Welcome, {user?.displayName}</h2> */}
         <motion.div
-          initial={{ x: 100 }}
+          initial={{ x: 100, opacity: 0 }}
           animate={{
             x: 0,
+            opacity: 1,
           }}
           transition={{
-            duration: 0.3,
+            duration: 0.5,
           }}
           className="bg-base-200 flex flex-col items-center gap-8 rounded-lg border border-gray-800 p-5"
         >

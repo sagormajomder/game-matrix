@@ -68,7 +68,7 @@ export default function GameDetailsPage() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 whileTap={{ scale: 0.97 }}
-                className="w-full"
+                className="xs:w-fit w-full"
               >
                 <Link
                   target="_blank"

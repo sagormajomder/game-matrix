@@ -1,8 +1,14 @@
-import React from "react";
+import { motion } from "motion/react";
 
 export default function GamesHeading({ totalGames, search, onSearch }) {
   return (
-    <div className="mb-6 flex flex-col-reverse items-center justify-between gap-2 sm:flex-row">
+    <motion.div
+      initial={{ y: 100, opacity: 0 }}
+      whileInView={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      viewport={{ once: true }}
+      className="mb-6 flex flex-col-reverse items-center justify-between gap-2 sm:flex-row"
+    >
       <h4 className="heading-4">({totalGames}) Games Found</h4>
       <label className="input">
         <svg
@@ -29,6 +35,6 @@ export default function GamesHeading({ totalGames, search, onSearch }) {
           placeholder="Search Games"
         />
       </label>
-    </div>
+    </motion.div>
   );
 }
