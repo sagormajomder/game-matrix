@@ -50,7 +50,7 @@ export default function GamesContainer({
   }
 
   return (
-    <div className="xs:grid-cols-2 grid grid-cols-1 gap-8 md:grid-cols-3">
+    <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3">
       {filterGames.map((game) => (
         <GameCard key={game.id} game={game} />
       ))}
@@ -59,7 +59,7 @@ export default function GamesContainer({
 }
 
 function GameCard({ game }) {
-  const { coverPhoto, title, ratings, id } = game;
+  const { coverPhoto, title, ratings, category, id } = game;
 
   return (
     <motion.div
@@ -67,7 +67,10 @@ function GameCard({ game }) {
       whileTap={{ scale: 0.95 }}
       className="bg-base-200 rounded-md border border-gray-800"
     >
-      <Link to={`/game-details/${id}`}>
+      <Link
+        className="flex h-full flex-col justify-between"
+        to={`/game-details/${id}`}
+      >
         <figure className="overflow-hidden rounded-t-lg max-[38.125rem]:w-full">
           <img
             className="h-48 w-full rounded-t-lg object-cover"
@@ -75,14 +78,11 @@ function GameCard({ game }) {
             alt={title}
           />
         </figure>
-        <div className="flex flex-col justify-between gap-4 p-4">
+        <div className="flex flex-col justify-between gap-2 p-4">
           <h5 className="heading-5">{title}</h5>
           <div className="flex items-center justify-between">
-            {/* <div className="flex items-center gap-1 rounded-sm bg-[#F1F5E8] px-2 py-1">
-          <img className="h-4" src={downloadIcon} alt="Download Icon" />
-          <p className="text-[#00D390]">{formatLargeNumber(downloads)}</p>
-        </div> */}
-            <div className="flex items-center gap-1 rounded-sm bg-[#FFF0E1] px-2 py-1">
+            <div className="badge badge-accent">{category}</div>
+            <div className="flex items-center gap-1.5 rounded-full bg-[#FFF0E1] px-4 py-0.5">
               <img className="h-4" src={ratingsIcon} alt="Rating Icon" />
               <p className="text-[#FF8811]">{ratings}</p>
             </div>
