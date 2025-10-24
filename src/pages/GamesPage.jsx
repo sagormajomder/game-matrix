@@ -9,8 +9,6 @@ export default function GamesPage() {
   const [search, setSearch] = useState("");
   const [totalGames, setTotalGames] = useState(games.length);
 
-  console.log(games, search, totalGames);
-
   return (
     <>
       <title>Game Matrix - Games</title>

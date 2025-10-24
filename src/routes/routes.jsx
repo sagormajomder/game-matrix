@@ -9,6 +9,7 @@ import RegisterPage from "../pages/RegisterPage";
 import ResetPasswordPage from "../pages/ResetPasswordPage";
 import Loader from "./../components/Loader";
 import ProfileUpdatePage from "./../pages/ProfileUpdatePage";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -28,16 +29,29 @@ const router = createBrowserRouter([
       },
       {
         path: "/game-details/:id",
-        element: <GameDetailsPage />,
+        element: (
+          <PrivateRoute>
+            <GameDetailsPage />
+          </PrivateRoute>
+        ),
+
         loader: async () => fetch("../games.json"),
       },
       {
         path: "/profile",
-        element: <ProfilePage />,
+        element: (
+          <PrivateRoute>
+            <ProfilePage />
+          </PrivateRoute>
+        ),
       },
       {
         path: "/update-profile",
-        element: <ProfileUpdatePage />,
+        element: (
+          <PrivateRoute>
+            <ProfileUpdatePage />
+          </PrivateRoute>
+        ),
       },
       // Auth
       {

@@ -15,8 +15,8 @@ export default function Header() {
     signOutUser()
       .then(() => {
         toast.success("User logout successful.");
-        setIsLoading(false);
         navigate("/");
+        setIsLoading(false);
       })
       .catch((error) => {
         console.log(error);

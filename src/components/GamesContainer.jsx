@@ -28,15 +28,10 @@ export default function GamesContainer({
         );
         setLoading(false);
       }, 600);
-    },
-    [search],
-  );
 
-  useEffect(
-    function () {
       onTotalGames(filterGames.length);
     },
-    [filterGames.length],
+    [search],
   );
 
   // Search Loading

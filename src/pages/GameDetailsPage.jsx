@@ -20,13 +20,9 @@ export default function GameDetailsPage() {
     developer,
   } = game;
 
-  // useEffect(function () {
-  //   document.title = `Game Matrix - ${title}`;
-  // }, []);
-
   return (
     <>
-      {/* <title> {title} </title> */}
+      <title>{`Game Matrix - ${title}`}</title>
 
       <section className="flex h-full items-center justify-center py-14">
         <div className="space-y-10 rounded-xl border border-gray-800 p-6">
