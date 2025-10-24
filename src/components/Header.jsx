@@ -140,22 +140,6 @@ export default function Header() {
 
         {!user && (
           <div className="navbar-end hidden items-center min-[25rem]:flex sm:hidden">
-            {/* <motion.button
-              initial={{ scale: 0 }}
-              animate={{ scale: 1 }}
-              whileTap={{ scale: 0.95 }}
-              className="btn btn-primary text-base-100 h-auto rounded-sm px-3 py-1 font-semibold"
-            >
-              <NavLink
-                // className="rounded-sm"
-                to="/auth/login"
-              >
-                <span className="flex items-center justify-center gap-1">
-                  <BiLogIn /> Login
-                </span>
-              </NavLink>
-            </motion.button> */}
-
             <motion.button
               onClick={handleLoginLink}
               initial={{ scale: 0 }}
