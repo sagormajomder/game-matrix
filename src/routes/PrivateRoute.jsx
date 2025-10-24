@@ -8,7 +8,8 @@ export default function PrivateRoute({ children }) {
 
   if (isLoading) return <Loader />;
 
-  if (!user)
+  if (!user) {
     return <Navigate to="/auth/login" replace state={location.pathname} />;
+  }
   return children;
 }

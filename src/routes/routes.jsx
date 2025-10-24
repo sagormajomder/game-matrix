@@ -10,6 +10,7 @@ import RegisterPage from "../pages/RegisterPage";
 import ResetPasswordPage from "../pages/ResetPasswordPage";
 import Loader from "./../components/Loader";
 import ProfileUpdatePage from "./../pages/ProfileUpdatePage";
+import NoLoggedRoute from "./NoLoggedRoute";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
@@ -58,15 +59,27 @@ const router = createBrowserRouter([
       // Auth
       {
         path: "auth/register",
-        Component: RegisterPage,
+        element: (
+          <NoLoggedRoute>
+            <RegisterPage />
+          </NoLoggedRoute>
+        ),
       },
       {
         path: "auth/login",
-        Component: LoginPage,
+        element: (
+          <NoLoggedRoute>
+            <LoginPage />
+          </NoLoggedRoute>
+        ),
       },
       {
         path: "auth/reset-password",
-        Component: ResetPasswordPage,
+        element: (
+          <NoLoggedRoute>
+            <ResetPasswordPage />
+          </NoLoggedRoute>
+        ),
       },
       {
         path: "*",
