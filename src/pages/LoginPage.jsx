@@ -15,6 +15,8 @@ export default function LoginPage() {
   const navigate = useNavigate();
   const location = useLocation();
 
+  // console.log(location);
+
   function HandleLogin(e) {
     e.preventDefault();
 
@@ -26,8 +28,9 @@ export default function LoginPage() {
         setLoginEmail("");
         setPassword("");
 
-        navigate(location.state ?? "/");
         setIsLoading(false);
+        // console.log(location);
+        navigate(location.state ?? "/");
       })
       .catch((error) => {
         const errorCode = error.code;
