@@ -1,5 +1,6 @@
 import { createBrowserRouter } from "react-router";
 import RootLayout from "../layouts/RootLayout";
+import ErrorPage from "../pages/ErrorPage";
 import GameDetailsPage from "../pages/GameDetailsPage";
 import GamesPage from "../pages/GamesPage";
 import HomePage from "../pages/HomePage";
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
       },
       {
         path: "/game-details/:id",
+        errorElement: <ErrorPage />,
         element: (
           <PrivateRoute>
             <GameDetailsPage />
@@ -65,6 +67,10 @@ const router = createBrowserRouter([
       {
         path: "auth/reset-password",
         Component: ResetPasswordPage,
+      },
+      {
+        path: "*",
+        Component: ErrorPage,
       },
     ],
   },
