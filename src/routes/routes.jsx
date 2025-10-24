@@ -27,6 +27,7 @@ const router = createBrowserRouter([
       {
         path: "/game-details/:id",
         element: <GameDetailsPage />,
+        loader: async () => fetch("../games.json"),
       },
       {
         path: "/profile",

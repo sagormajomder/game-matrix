@@ -81,7 +81,7 @@ function GameCard({ game }) {
         <div className="flex flex-col justify-between gap-2 p-4">
           <h5 className="heading-5">{title}</h5>
           <div className="flex items-center justify-between">
-            <div className="badge badge-accent">{category}</div>
+            <div className="badge badge-primary font-medium">{category}</div>
             <div className="flex items-center gap-1.5 rounded-full bg-[#FFF0E1] px-4 py-0.5">
               <img className="h-4" src={ratingsIcon} alt="Rating Icon" />
               <p className="text-[#FF8811]">{ratings}</p>
