@@ -59,12 +59,12 @@ export default function RegisterPage() {
                 navigate("/auth/login");
               })
               .catch((error) => {
-                console.log(error);
+                // console.log(error);
                 toast.error(error.message);
               });
           })
           .catch((error) => {
-            console.log(error);
+            // console.log(error);
             toast.error(error.message);
           });
       })

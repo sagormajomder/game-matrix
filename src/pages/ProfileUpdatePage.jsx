@@ -47,7 +47,7 @@ export default function ProfileUpdatePage() {
         navigate("/profile");
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         toast.error(error.message);
       })
       .finally(() => {

@@ -20,7 +20,7 @@ function AuthProvider({ children }) {
   const [isLoading, setIsLoading] = useState(true);
   const [loginEmail, setLoginEmail] = useState("");
 
-  console.log(user);
+  // console.log(user);
 
   // User Registration
   function createUser(email, password) {

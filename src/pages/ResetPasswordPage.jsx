@@ -20,7 +20,7 @@ export default function ResetPasswordPage() {
         }, 800);
       })
       .catch((error) => {
-        console.log(error);
+        // console.log(error);
         toast.error(error.message);
       });
   }

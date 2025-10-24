@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 import { useAuth } from "../contexts/AuthContext";
 
 export default function GoogleLogin() {
-  const { signInWithGoogle } = useAuth();
+  const { signInWithGoogle, setIsLoading } = useAuth();
   const navigate = useNavigate();
 
   function handleGoogleSignIn() {
@@ -32,9 +32,14 @@ export default function GoogleLogin() {
           toast.error("Operation not allowed. Please contact support.");
         } else if (errorCode === "auth/network-request-failed") {
           toast.error("Network error. Please check your connection.");
+        } else if (errorCode === "auth/popup-closed-by-user") {
+          toast.error("User closed the gooogle login popup.");
         } else {
           toast.error(errorMessage || "An unexpected error occurred.");
         }
+      })
+      .finally(() => {
+        setIsLoading(false);
       });
   }
   return (

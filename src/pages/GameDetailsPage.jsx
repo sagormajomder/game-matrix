@@ -67,19 +67,16 @@ export default function GameDetailsPage() {
               <motion.button
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
-                whileTap={{ scale: 0.95 }}
-                className="btn btn-primary xs:w-fit w-full px-10"
-                whiteTap={{ scale: 0.97 }}
+                whileTap={{ scale: 0.97 }}
+                className="w-full"
               >
                 <Link
                   target="_blank"
                   rel="noopener noreferrer"
                   to={downloadLink}
+                  className="btn btn-primary xs:w-fit flex w-full items-center justify-center gap-1 rounded-sm px-10"
                 >
-                  <span className="flex items-center justify-center gap-1">
-                    {" "}
-                    <FiDownload /> Dowload
-                  </span>
+                  <FiDownload /> Dowload
                 </Link>
               </motion.button>
             </div>

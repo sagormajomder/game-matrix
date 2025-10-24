@@ -11,6 +11,10 @@ export default function Header() {
 
   const navigate = useNavigate();
 
+  function handleLoginLink() {
+    navigate("/auth/login");
+  }
+
   function handleLogOut() {
     signOutUser()
       .then(() => {
@@ -45,19 +49,15 @@ export default function Header() {
           </li>
           <li className="inline-flex min-[25rem]:hidden sm:inline-block">
             <motion.button
+              onClick={handleLoginLink}
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               whileTap={{ scale: 0.95 }}
               className="btn btn-primary text-base-100 h-auto rounded-sm px-3 py-1 font-semibold"
             >
-              <NavLink
-                // className="rounded-sm"
-                to="/auth/login"
-              >
-                <span className="flex items-center justify-center gap-1">
-                  <BiLogIn /> Login
-                </span>
-              </NavLink>
+              <span className="flex items-center justify-center gap-1">
+                <BiLogIn /> Login
+              </span>
             </motion.button>
           </li>
         </>
@@ -85,13 +85,11 @@ export default function Header() {
             initial={{ scale: 0 }}
             animate={{ scale: 1 }}
             whileTap={{ scale: 0.95 }}
-            className="bg-primary text-base-100 w-3/4 cursor-pointer rounded-sm px-3 py-1.5 font-semibold hover:bg-[#34abe1] sm:w-auto"
+            className="bg-primary text-base-100 flex w-3/4 cursor-pointer items-center justify-center gap-1 rounded-sm px-3 py-1.5 font-semibold hover:bg-[#34abe1] sm:w-auto"
             onClick={handleLogOut}
           >
-            <span className="flex items-center justify-center gap-1">
-              <TbLogout />
-              LogOut
-            </span>
+            <TbLogout />
+            LogOut
           </motion.button>
         </div>
       )}
@@ -142,7 +140,7 @@ export default function Header() {
 
         {!user && (
           <div className="navbar-end hidden items-center min-[25rem]:flex sm:hidden">
-            <motion.button
+            {/* <motion.button
               initial={{ scale: 0 }}
               animate={{ scale: 1 }}
               whileTap={{ scale: 0.95 }}
@@ -156,6 +154,18 @@ export default function Header() {
                   <BiLogIn /> Login
                 </span>
               </NavLink>
+            </motion.button> */}
+
+            <motion.button
+              onClick={handleLoginLink}
+              initial={{ scale: 0 }}
+              animate={{ scale: 1 }}
+              whileTap={{ scale: 0.95 }}
+              className="btn btn-primary text-base-100 h-auto rounded-sm px-3 py-1 font-semibold"
+            >
+              <span className="flex items-center justify-center gap-1">
+                <BiLogIn /> Login
+              </span>
             </motion.button>
           </div>
         )}
@@ -187,13 +197,11 @@ export default function Header() {
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 whileTap={{ scale: 0.95 }}
-                className="bg-primary text-base-100 w-3/4 cursor-pointer rounded-sm px-3 py-1 font-semibold hover:bg-[#34abe1] sm:w-auto"
+                className="bg-primary text-base-100 flex w-3/4 cursor-pointer items-center justify-center gap-1 rounded-sm px-3 py-1 font-semibold hover:bg-[#34abe1] sm:w-auto"
                 onClick={handleLogOut}
               >
-                <span className="flex items-center justify-center gap-1">
-                  <TbLogout />
-                  LogOut
-                </span>
+                <TbLogout />
+                LogOut
               </motion.button>
             </div>
           </div>
