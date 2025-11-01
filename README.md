@@ -4,10 +4,24 @@ This project showcases a curated collection of indie games, helping gamers disco
 
 ## Table of Contents
 
-- [Tools & Technology](#tools--technology-used)
 - [Key Features](#key-features)
+- [Tools & Technology](#tools--technology-used)
+- [Run it Locally](#run-it-locally)
 - [Necessary Links](#necessary-links)
 - [Connect With Me](#connect-with-me)
+
+## Key Features
+
+- Curated Indie Game Library
+  - Handpicked selection of unique, creative indie games for discovery and play.
+- User-Friendly Browsing Experience
+  - Clean layout with filters, categories, and search to help gamers find what they love.
+- Game Detail Pages
+  - Each game includes a dedicated section with description, genre and play options.
+- Newsletter Integration
+  - Gamers can subscribe to receive updates on new releases, tips, and trends.
+- Responsive Design
+  - Optimized for desktop and mobile devices to ensure smooth gameplay and browsing.
 
 ## Tools & Technology Used
 
@@ -30,18 +44,21 @@ This project showcases a curated collection of indie games, helping gamers disco
 - Prettier
 - EsLint
 
-## Key Features
+## Run it Locally
 
-- Curated Indie Game Library
-  - Handpicked selection of unique, creative indie games for discovery and play.
-- User-Friendly Browsing Experience
-  - Clean layout with filters, categories, and search to help gamers find what they love.
-- Game Detail Pages
-  - Each game includes a dedicated section with description, genre and play options.
-- Newsletter Integration
-  - Gamers can subscribe to receive updates on new releases, tips, and trends.
-- Responsive Design
-  - Optimized for desktop and mobile devices to ensure smooth gameplay and browsing.
+Please follow the below instructions to run this project in your machine:
+
+1. Clone this repository
+
+   ```sh
+   git clone https://github.com/sagormajomder/game-matrix.git
+   ```
+
+2. Open the directory "game-matrix" into visual studio code
+3. Open Terminal and run `npm i` to install all dependencies
+4. Run `npm run dev` to run the project into browser
+
+The project will be available on http://localhost:5173/ by default.
 
 ## Necessary Links
 
