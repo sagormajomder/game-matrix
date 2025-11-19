@@ -5,9 +5,10 @@ This project showcases a curated collection of indie games, helping gamers disco
 ## Table of Contents
 
 - [Key Features](#key-features)
-- [Tools & Technology](#tools--technology-used)
+- [Technology Used](#technology-used)
 - [Run it Locally](#run-it-locally)
-- [Necessary Links](#necessary-links)
+- [Live URL](#live-url)
+- [Project Dependencies](#project-dependencies)
 - [Connect With Me](#connect-with-me)
 
 ## Key Features
@@ -23,26 +24,12 @@ This project showcases a curated collection of indie games, helping gamers disco
 - Responsive Design
   - Optimized for desktop and mobile devices to ensure smooth gameplay and browsing.
 
-## Tools & Technology Used
+## Technology Used
 
-### Technology
-
-- Javascript
-- React (v19)
-- Firebase (v12)
-- React Router (v7)
-- Tailwindcss (v4)
-- Motion (v12)
-- Swiper (v12)
-- DaisyUI (v5)
-- React Toastify (v11)
-- React Icons (v5)
-
-### Tools
-
-- Vite (v7)
-- Prettier
-- EsLint
+- **Frontend**: JavaScript, React.js, Daisyui
+- **Authentication**: Firebase Authentication
+- **Styling**: Tailwind CSS
+- **Deployment**: Firebase (Frontend)
 
 ## Run it Locally
 
@@ -56,13 +43,66 @@ Please follow the below instructions to run this project in your machine:
 
 2. Open the directory "game-matrix" into visual studio code
 3. Open Terminal and run `npm i` to install all dependencies
-4. Run `npm run dev` to run the project into browser
+4. Set up environment variables:
 
-The project will be available on http://localhost:5173/ by default.
+   Create a .env.local file in the root directory and add the following environment variables:
 
-## Necessary Links
+   ```
+      // Example .env file
+      VITE_APIKEY=<get from firebase>
+      VITE_AUTHDOMAIN=<get from firebase>
+      VITE_PROJECTID=<get from firebase>
+      VITE_STORAGEBUCKET=<get from firebase>
+      VITE_MESSAGINGSENDERID=<get from firebase>
+      VITE_APPID=<get from firebase>
 
-🚀 **Live Link:** [firebase link](https://game-matrix-sm.web.app/)
+   ```
+
+5. Run `npm run dev` to run the project into browser.
+
+   The project will be available on http://localhost:5173/ by default.
+
+## Live URL
+
+#### 🚀 Live Project URL: https://game-matrix-sm.web.app/
+
+## Project Dependencies
+
+#### Dependencies List
+
+```
+ "dependencies": {
+    "@tailwindcss/vite": "^4.1.15",
+    "daisyui": "^5.3.7",
+    "firebase": "^12.4.0",
+    "motion": "^12.23.24",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0",
+    "react-icons": "^5.5.0",
+    "react-router": "^7.9.4",
+    "react-toastify": "^11.0.5",
+    "swiper": "^12.0.3",
+    "tailwindcss": "^4.1.15"
+  },
+```
+
+#### Dev Dependencies List
+
+```
+  "devDependencies": {
+    "@eslint/js": "^9.37.0",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "@vitejs/plugin-react": "^5.0.4",
+    "eslint": "^9.37.0",
+    "eslint-plugin-react-hooks": "^7.0.0",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.4.0",
+    "prettier": "^3.6.2",
+    "prettier-plugin-tailwindcss": "^0.7.1",
+    "vite": "^7.1.10"
+  }
+```
 
 ## Connect with Me
 
