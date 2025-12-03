@@ -32,11 +32,7 @@ const router = createBrowserRouter([
       {
         path: "/game-details/:id",
         errorElement: <ErrorPage />,
-        element: (
-          <PrivateRoute>
-            <GameDetailsPage />
-          </PrivateRoute>
-        ),
+        Component: GameDetailsPage,
 
         loader: async () => fetch("../games.json"),
       },
