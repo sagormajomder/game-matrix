@@ -97,7 +97,7 @@ export default function Header() {
   );
 
   return (
-    <header className="bg-base-300 border border-gray-800">
+    <header className="bg-base-300 sticky top-0 z-100 border border-gray-800">
       <nav className="navbar mx-auto max-w-7xl px-4">
         <div className="navbar-start basis-full min-[300px]:basis-auto sm:basis-1/2">
           <div className="dropdown">
