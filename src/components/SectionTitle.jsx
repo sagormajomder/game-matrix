@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-export default function SectionTitle({ title, desc }) {
+export default function SectionTitle({ title, desc = "" }) {
   return (
     <motion.div
       initial={{ y: 100, opacity: 0 }}
@@ -9,7 +9,7 @@ export default function SectionTitle({ title, desc }) {
       className="text-center"
     >
       <h2 className="heading-2">{title}</h2>
-      <p>{desc}</p>
+      {desc && <p>{desc}</p>}
     </motion.div>
   );
 }
