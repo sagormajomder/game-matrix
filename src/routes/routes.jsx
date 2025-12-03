@@ -1,5 +1,7 @@
 import { createBrowserRouter } from "react-router";
 import RootLayout from "../layouts/RootLayout";
+import AboutPage from "../pages/AboutPage";
+import ContactPage from "../pages/ContactPage";
 import ErrorPage from "../pages/ErrorPage";
 import GameDetailsPage from "../pages/GameDetailsPage";
 import GamesPage from "../pages/GamesPage";
@@ -36,6 +38,17 @@ const router = createBrowserRouter([
 
         loader: async () => fetch("../games.json"),
       },
+      {
+        path: "/about",
+        errorElement: <ErrorPage />,
+        Component: AboutPage,
+      },
+      {
+        path: "/contact",
+        errorElement: <ErrorPage />,
+        Component: ContactPage,
+      },
+
       {
         path: "/profile",
         element: (

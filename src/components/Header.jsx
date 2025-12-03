@@ -40,6 +40,16 @@ export default function Header() {
           Games
         </NavLink>
       </li>
+      <li className={user ? "sm:mr-1" : ""}>
+        <NavLink className="rounded-sm" to="/about">
+          About Us
+        </NavLink>
+      </li>
+      <li className={user ? "sm:mr-1" : ""}>
+        <NavLink className="rounded-sm" to="/contact">
+          Contact Us
+        </NavLink>
+      </li>
       {!user && (
         <>
           <li>
