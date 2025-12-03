@@ -1,6 +1,7 @@
 import Container from "./../components/Container";
 import SectionTitle from "./../components/SectionTitle";
 
+import { motion } from "motion/react";
 import { GoGoal, GoPeople } from "react-icons/go";
 import { LuBox } from "react-icons/lu";
 import { MdOutlineStars } from "react-icons/md";
@@ -14,7 +15,13 @@ export default function AboutPage() {
           desc="GameMatrix is a vibrant platform dedicated to indie games, offering players a curated space to discover, explore, and enjoy unique titles. With regular updates through newsletters, it supports indie developers, fosters community engagement, and delivers fresh content and personalized recommendations, making gaming more exciting, inclusive, and rewarding for everyone."
         />
         {/* Mission and Vision */}
-        <div className="my-20 grid grid-cols-1 gap-4 sm:grid-cols-2">
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="my-20 grid grid-cols-1 gap-4 sm:grid-cols-2"
+        >
           {/* Box 1 */}
           <div className="bg-base-200 rounded-xl border border-gray-800 px-5 py-8">
             <GoGoal className="text-primary mb-3 text-5xl" />
@@ -39,7 +46,7 @@ export default function AboutPage() {
               </p>
             </div>
           </div>
-        </div>
+        </motion.div>
 
         {/* Why we started */}
         <div className="my-20">
@@ -50,7 +57,13 @@ export default function AboutPage() {
         </div>
         {/* Our team */}
         <SectionTitle title="Our Team" />
-        <div className="grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="grid grid-cols-1 gap-4 sm:grid-cols-3"
+        >
           {/* Box 1 */}
           <div className="bg-base-200 rounded-xl border border-gray-800 px-5 py-8 text-center">
             <GoPeople className="text-primary mx-auto mb-3 text-5xl" />
@@ -80,7 +93,7 @@ export default function AboutPage() {
               <p>Your happiness and feedback drive everything we build.</p>
             </div>
           </div>
-        </div>
+        </motion.div>
       </Container>
     </section>
   );

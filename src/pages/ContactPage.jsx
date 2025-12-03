@@ -1,4 +1,5 @@
-import { useState, useRef } from "react";
+import { motion } from "motion/react";
+import { useRef, useState } from "react";
 import { FiMapPin } from "react-icons/fi";
 import { IoCallOutline } from "react-icons/io5";
 import { MdOutlineEmail } from "react-icons/md";
@@ -28,7 +29,13 @@ export default function ContactPage() {
           title="Contact Us"
           desc="Have any questions or need help? We're always here for you. Reach out anytime!"
         />
-        <div className="my-20 grid grid-cols-1 gap-4 sm:grid-cols-3">
+        <motion.div
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          className="my-20 grid grid-cols-1 gap-4 sm:grid-cols-3"
+        >
           {/* Box 1 */}
           <div className="bg-base-200 rounded-xl border border-gray-800 px-5 py-8 text-center">
             <MdOutlineEmail className="text-primary mx-auto mb-3 text-4xl" />
@@ -53,10 +60,17 @@ export default function ContactPage() {
               <p>Dhaka, Bangladesh</p>
             </div>
           </div>
-        </div>
+        </motion.div>
         {/* Contact Form */}
         <SectionTitle title="Send Us a Message" />
-        <form ref={formRef} onSubmit={handleContact}>
+        <motion.form
+          initial={{ y: 100, opacity: 0 }}
+          whileInView={{ y: 0, opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          viewport={{ once: true }}
+          ref={formRef}
+          onSubmit={handleContact}
+        >
           <fieldset className="fieldset">
             <div className="flex w-full flex-col gap-2 sm:flex-row sm:items-center sm:justify-between sm:gap-5">
               <div className="flex basis-1/2 flex-col gap-1">
@@ -118,7 +132,7 @@ export default function ContactPage() {
               {isSubmit ? "Sending..." : "Send Message"}
             </button>
           </fieldset>
-        </form>
+        </motion.form>
       </Container>
     </section>
   );
