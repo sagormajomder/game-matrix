@@ -30,7 +30,7 @@ export default function Banner({ games }) {
           <SwiperSlide key={game.id}>
             <div className="flex w-full justify-center overflow-hidden">
               <img
-                className="h-62.5 w-full object-cover sm:h-auto sm:w-auto"
+                className="h-62.5 w-full object-cover sm:h-150"
                 src={game.coverPhoto}
                 alt={game.title}
               />
