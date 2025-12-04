@@ -10,7 +10,7 @@ export default function HomePage() {
   const data = useLoaderData();
   return (
     <>
-      <Banner games={data.slice(0, 5)} />
+      <Banner games={data.slice(1, 5)} />
       <GameCategories />
       <PopularGames games={data.slice(0, 4)} />
       <GameOfTheWeek />
