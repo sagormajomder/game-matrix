@@ -9,7 +9,7 @@ import SectionTitle from "../SectionTitle";
 
 export default function GameCategories() {
   return (
-    <section className="my-8 space-y-10 py-4">
+    <section className="my-8 mt-14 space-y-10 py-14">
       <SectionTitle
         title="Game Categories"
         desc="Discover indie gems across every style of play"

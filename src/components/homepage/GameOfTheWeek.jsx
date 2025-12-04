@@ -3,7 +3,7 @@ import SectionTitle from "../SectionTitle";
 
 export default function GameOfTheWeek() {
   return (
-    <section className="my-8 space-y-10 py-4">
+    <section className="my-8 space-y-10 py-14">
       <SectionTitle
         title="Game of the Week"
         desc="Level up with our weekly featured pick"
