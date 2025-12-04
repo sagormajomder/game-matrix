@@ -14,7 +14,7 @@ export default function Newsletter() {
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="bg-base-200 mt-6 mb-14 flex flex-col items-center justify-center gap-4 rounded-xl border border-gray-800 px-4 py-14"
+      className="bg-base-200 mt-20 mb-14 flex flex-col items-center justify-center gap-4 rounded-xl border border-gray-800 px-4 py-14"
     >
       <div className="bg-base-100 relative h-13 w-13 rounded-full border border-gray-800 p-5 text-center">
         <svg

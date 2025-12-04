@@ -39,6 +39,7 @@ export default function ProfilePage() {
             <span>Email Address </span>
             <span className="bg-base-100 mb-4 rounded-sm border border-gray-800 px-3 py-1 font-medium sm:mb-0">
               {user?.email}
+              {!user.email && "Not Applicable"}
             </span>
           </div>
           <Link to="/update-profile" className="btn btn-primary">
