@@ -57,7 +57,7 @@ export default function Header() {
               Register
             </NavLink>
           </li>
-          <li className="inline-flex min-[25rem]:hidden sm:inline-block">
+          <li className="inline-flex min-[850px]:inline-block min-[25rem]:hidden">
             <motion.button
               onClick={handleLoginLink}
               initial={{ scale: 0 }}
@@ -73,7 +73,7 @@ export default function Header() {
         </>
       )}
       {user && (
-        <div className="mt-2 ml-2 flex items-center gap-2.5 min-[25rem]:hidden sm:mt-0 sm:ml-0 sm:flex sm:gap-4">
+        <div className="mt-2 ml-2 flex items-center gap-2.5 min-[25rem]:hidden min-[53.125rem]:mt-0 min-[53.125rem]:ml-0 min-[53.125rem]:flex min-[53.125rem]:gap-4">
           {isLoading ? (
             <span className="loading loading-ring loading-xl"></span>
           ) : (
@@ -109,9 +109,14 @@ export default function Header() {
   return (
     <header className="bg-base-300 sticky top-0 z-100 border border-gray-800">
       <nav className="navbar mx-auto max-w-7xl px-4">
-        <div className="navbar-start basis-full min-[300px]:basis-auto sm:basis-1/2">
+        {/* Navbar Start */}
+        <div className="navbar-start basis-full min-[18.75rem]:basis-auto">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="btn btn-ghost sm:hidden">
+            <div
+              tabIndex={0}
+              role="button"
+              className="btn btn-ghost min-[53.125rem]:hidden"
+            >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5"
@@ -142,14 +147,15 @@ export default function Header() {
             </span>
           </Link>
         </div>
-        <div className="navbar-end hidden items-center sm:flex">
+        {/* Navbar End */}
+        <div className="navbar-end hidden basis-[80%] items-center min-[53.125rem]:flex">
           <ul className="menu menu-horizontal items-center gap-1 px-1">
             {links}
           </ul>
         </div>
 
         {!user && (
-          <div className="navbar-end hidden items-center min-[25rem]:flex sm:hidden">
+          <div className="navbar-end hidden items-center min-[25rem]:flex min-[53.125rem]:hidden">
             <motion.button
               onClick={handleLoginLink}
               initial={{ scale: 0 }}
@@ -165,8 +171,8 @@ export default function Header() {
         )}
 
         {user && (
-          <div className="navbar-end hidden items-center min-[25rem]:flex sm:hidden">
-            <div className="flex items-center gap-4 sm:hidden">
+          <div className="navbar-end hidden items-center min-[25rem]:flex min-[53.125rem]:hidden">
+            <div className="flex items-center gap-4">
               {isLoading ? (
                 <span className="loading loading-ring loading-xl"></span>
               ) : (
