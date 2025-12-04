@@ -1,4 +1,4 @@
-import { NavLink } from "react-router";
+import { Link, NavLink } from "react-router";
 import footerLogo from "../assets/footer-logo.png";
 
 export default function Footer() {
@@ -48,21 +48,33 @@ export default function Footer() {
           </a>
         </div>
         <div className="menu flex-row gap-2">
-          <NavLink className="rounded-sm" to="/">
+          <Link
+            className="rounded-sm transition duration-300 hover:text-gray-300"
+            to="/"
+          >
             Home
-          </NavLink>
+          </Link>
 
-          <NavLink className="rounded-sm" to="/games">
+          <Link
+            className="rounded-sm transition duration-300 hover:text-gray-300"
+            to="/games"
+          >
             Games
-          </NavLink>
+          </Link>
 
-          <NavLink className="rounded-sm" to="/about">
+          <Link
+            className="rounded-sm transition duration-300 hover:text-gray-300"
+            to="/about"
+          >
             About Us
-          </NavLink>
+          </Link>
 
-          <NavLink className="rounded-sm" to="/contact">
+          <Link
+            className="rounded-sm transition duration-300 hover:text-gray-300"
+            to="/contact"
+          >
             Contact Us
-          </NavLink>
+          </Link>
         </div>
       </nav>
     </footer>
