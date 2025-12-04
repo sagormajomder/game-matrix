@@ -9,8 +9,8 @@ export default function HomePage() {
   return (
     <>
       <Banner games={data.slice(0, 5)} />
-      <PopularGames games={data.slice(0, 6)} />
       <GameCategories />
+      <PopularGames games={data.slice(0, 4)} />
       <Newsletter />
     </>
   );

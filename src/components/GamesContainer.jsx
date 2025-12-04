@@ -53,7 +53,7 @@ export default function GamesContainer({
       whileInView={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.5 }}
       viewport={{ once: true }}
-      className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3"
+      className="grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4"
     >
       {filterGames.map((game) => (
         <GameCard key={game.id} game={game} />
@@ -91,6 +91,14 @@ function GameCard({ game }) {
               <p className="text-[#FF8811]">{ratings}</p>
             </div>
           </div>
+        </div>
+        <div className="w-full p-4">
+          <Link
+            className="btn btn-primary w-full px-8 text-center"
+            to={`/game-details/${id}`}
+          >
+            View Details
+          </Link>
         </div>
       </Link>
     </motion.div>
