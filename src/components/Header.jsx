@@ -57,7 +57,7 @@ export default function Header() {
               Register
             </NavLink>
           </li>
-          <li className="inline-flex min-[850px]:inline-block min-[25rem]:hidden">
+          <li className="inline-flex min-[25rem]:hidden min-[53.125rem]:inline-flex">
             <motion.button
               onClick={handleLoginLink}
               initial={{ scale: 0 }}
