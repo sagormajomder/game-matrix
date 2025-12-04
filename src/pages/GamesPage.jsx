@@ -9,6 +9,8 @@ export default function GamesPage() {
   const [search, setSearch] = useState("");
   const [totalGames, setTotalGames] = useState(games.length);
 
+  const [sortBy, setSortBy] = useState("");
+
   return (
     <>
       <title>Game Matrix - Games</title>
@@ -22,10 +24,13 @@ export default function GamesPage() {
           totalGames={totalGames}
           search={search}
           onSearch={setSearch}
+          sortBy={sortBy}
+          setSortBy={setSortBy}
         />
         {/* Apps Container */}
         <GamesContainer
           games={games}
+          sortBy={sortBy}
           search={search}
           onTotalGames={setTotalGames}
         />

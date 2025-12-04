@@ -7,6 +7,7 @@ import GameNotFound from "./GameNotFound";
 export default function GamesContainer({
   games,
   search = "",
+  sortBy = "",
   onTotalGames = () => {},
 }) {
   const [loading, setLoading] = useState(true);
@@ -16,6 +17,18 @@ export default function GamesContainer({
       .toLowerCase()
       .includes(search.replace(/\s+/g, " ").trim().toLowerCase()),
   );
+
+  if (sortBy === "high") {
+    filterGames = filterGames.toSorted(
+      (game1, game2) => game2.ratings - game1.ratings,
+    );
+  }
+
+  if (sortBy === "low") {
+    filterGames = filterGames.toSorted(
+      (game1, game2) => game1.ratings - game2.ratings,
+    );
+  }
 
   useEffect(
     function () {

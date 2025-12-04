@@ -1,6 +1,12 @@
 import { motion } from "motion/react";
 
-export default function GamesHeading({ totalGames, search, onSearch }) {
+export default function GamesHeading({
+  totalGames,
+  search,
+  onSearch,
+  sortBy,
+  setSortBy,
+}) {
   return (
     <motion.div
       initial={{ y: 100, opacity: 0 }}
@@ -9,6 +15,17 @@ export default function GamesHeading({ totalGames, search, onSearch }) {
       viewport={{ once: true }}
       className="mb-6 flex flex-col-reverse items-center justify-between gap-2 sm:flex-row"
     >
+      <select
+        value={sortBy}
+        onChange={(e) => setSortBy(e.target.value)}
+        className="select"
+      >
+        <option value="" disabled={true}>
+          Sort by Rating
+        </option>
+        <option value="high">High to Low</option>
+        <option value="low">Low to High</option>
+      </select>
       <h4 className="heading-4">({totalGames}) Games Found</h4>
       <label className="input">
         <svg
