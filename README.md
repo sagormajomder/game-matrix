@@ -1,5 +1,7 @@
 # Game Matrix — Dive into the world of games.
 
+![](./src//assets/project-screenshot.png)
+
 This project showcases a curated collection of indie games, helping gamers discover, explore, and play unique games while receiving regular updates through a newsletter. It supports indie developers, builds community, and enhances user engagement with fresh content and game recommendations.
 
 ## Table of Contents
